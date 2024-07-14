@@ -1,0 +1,311 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Resto de tu CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: rgb(20, 106, 205);
+    font-weight: 700;
+}
+
+.navigation ul {
+    font-size: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navigation ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation ul li a:hover {
+    color: red;
+}
+
+.navigation ul li {
+    margin-right: 20px;
+}
+
+.navigation ul li:last-child {
+    margin-right: 0;
+}
+
+.header.navigation ul li {
+    float: left;
+    position: relative;
+}
+
+.header.navigation ul li a {
+    font-size: 10px;
+    color: rgb(222, 19, 19);
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.header.navigation ul li a:hover {
+    background-color: white;
+}
+
+.header.navigation ul li ul {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: rgba(1, 1, 1, 0.7);
+    display: none;
+}
+
+.header.navigation ul li ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.header.navigation ul li ul li ul {
+    position: absolute;
+    top: 0;
+    right: 300px;
+}
+
+.header.navigation ul li ul li {
+    width: 100%;
+}
+
+.header.navigation ul li:hover > ul {
+    display: initial;
+}
+
+#toggle,
+.header label {
+    display: none;
+    cursor: pointer;
+}
+
+.menu {
+    width: 45px;
+    height: 35px;
+}
+
+@media(max-width: 950px) {
+    .header label {
+        display: initial;
+    }
+
+    .header {
+        padding: 20px 10%;
+    }
+
+    .header.navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(1, 1, 1, 0.7);
+        display: none;
+    }
+
+    .header.navigation ul li {
+        width: 100%;
+    }
+
+    .header.navigation ul li a {
+        padding: 8px 30px 8px 10%;
+    }
+
+    .header.navigation ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header.navigation ul li ul li {
+        background-color: rgba(1, 1, 1, 0.7);
+    }
+
+    .header.navigation ul li ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    #toggle:checked ~ .navigation {
+        display: block;
+    }
+}
+
+
+.hero {
+    min-height: 100vh;
+    background-image: url(IMG/WhatsApp\ Video\ 2024-07-13\ at\ 6.05.13\ PM.mp4);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 80px; /* Espacio suficiente para que el contenido no se superponga con el header */
+    padding-left: 10%; /* Ajuste el margen izquierdo según sea necesario */
+    padding-right: 10%; /* Ajuste el margen derecho según sea necesario */
+    color: white;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.hero h2 {
+    font-size: 60px; /* Tamaño de letra aumentado */
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 50px; /* Tamaño de letra aumentado */
+    /* max-width: 800px; */
+    width: 100%; /* Ajusta el ancho del párrafo */
+    color: coral;
+}
+
+/* Estilo para la sección de personajes */
+.personajes {
+    padding: 60px 10%;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.personajes h2 {
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.personaje {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+.personaje img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.personaje h3 {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.personaje p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Estilo para las secciones de detalle de los personajes */
+.detalle-personaje {
+    padding: 60px 10%;
+    background-color: white;
+    text-align: left;
+    display: none; /* Oculto por defecto */
+}
+
+.detalle-personaje h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.detalle-personaje p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.detalle-personaje a {
+    font-size: 18px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.detalle-personaje a:hover {
+    text-decoration: underline;
+}
+
+/* Mostrar la sección de detalle del personaje cuando es el objetivo */
+:target {
+    display: block;
+}
+
+
+.personajes {
+    background-image: url('IMG/WhatsApp\ Video\ 2024-07-13\ at\ 6.05.13\ PM.mp4'); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 10%;
+    min-height: 100vh;
+    text-align: center;
+    color: black; /*
+}
+
+.personajes h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    
+}
+
+.personaje {
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+    text-align: center;
+}
+
+.personaje img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.personaje h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.personaje p {
+    font-size: 16px;
+    color: #fff; /* Cambiar a blanco para visibilidad sobre el fondo */
+}
+
